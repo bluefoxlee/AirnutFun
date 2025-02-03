@@ -11,7 +11,7 @@ import requests
 from socket import socket, AF_INET, SOCK_STREAM, SOL_SOCKET, SO_REUSEADDR
 
 from homeassistant.config_entries import ConfigEntry
-from homeassistant.helpers.typing import HomeAssistantType
+from homeassistant.core import HomeAssistant
 
 from homeassistant import config_entries
 import homeassistant.helpers.config_validation as cv
@@ -131,7 +131,7 @@ def get_time():
 def get_time_unix():
     return int((datetime.datetime.now() + datetime.timedelta(hours=8)).timestamp())
         
-async def async_setup_entry(hass: HomeAssistantType, entry: ConfigEntry):
+async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry):
     hass.async_create_task(
         hass.config_entries.async_forward_entry_setup(entry, "sensor")
     )
