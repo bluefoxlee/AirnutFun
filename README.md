@@ -25,6 +25,8 @@ airnut:
   night_end_hour: 0001-01-01 06:00:00
  #天气城市代码
   weathe_code: 101280800
+ #裝置所顯示時間偏移設定，例如台北為8
+  display_time_offset: 8
   
 # ip为空气果内网的ip地址，空气果1s共四项数据，分别写四个类型的传感器
 sensor:
